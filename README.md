@@ -1,6 +1,5 @@
-# databricks
-data engineering project using databricks. 
-
+# Azure Databricks
+ 
 Azure Databricks is a cloud-based, managed analytics platform that combines the power of Apache Spark with the integration capabilities of Microsoft Azure. It is designed to simplify big data and machine learning workflows by providing a collaborative, scalable, and fully managed Spark environment.
 
 Key Features of Azure Databricks:
