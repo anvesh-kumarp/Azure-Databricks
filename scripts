@@ -1,0 +1,15 @@
+1. Data Transformation and Cleaning
+Use case: Transform raw JSON logs into structured data for analytics.
+
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("DataCleaning").getOrCreate()
+
+# Load JSON data from Azure Data Lake
+raw_data = spark.read.json("abfss://<container>@<storage_account>.dfs.core.windows.net/logs.json")
+
+# Transform data
+cleaned_data = raw_data.filter(raw_data["status"] == "success")
+
+# Write transformed data back to Azure Data Lake
+cleaned_data.write.parquet("abfss://<container>@<storage_account>.dfs.core.windows.net/cleaned_logs/")
